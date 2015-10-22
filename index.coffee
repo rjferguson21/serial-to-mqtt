@@ -1,8 +1,6 @@
 yargs = require('yargs').argv
 config = require('./conf/config')
-client = require('./mqtt').get()
 sensors = require 'sensors'
-Handler = require 'mqtt-handler'
 
 if yargs["serial-host"]?
   config.serial.host = yargs["serial-host"]
@@ -20,5 +18,6 @@ else
 if yargs["mqtt-port"]?
   config.mqtt.port = yargs["mqtt-port"]
 
+client = require('./mqtt').get()
 Serial = require './serial'
 serial = new Serial( host: config.serial.host, port: config.serial.port, client)
