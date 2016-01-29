@@ -1,7 +1,7 @@
 module.exports =
   mqtt:
-    host: undefined
+    host: "mosquitto"
     port: 1883
   serial:
-    host: undefined
+    host: "home"
     port: 5003
